@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <title>PsicoSociall</title>
   </head>
-  <body>
+  <body style="background-color: light-grey">
     <main>
       <div class="container">
         <div class="border border-primary">
@@ -25,16 +25,16 @@
                   type="nome"
                   class="form-control"
                   id="nome"
-                  placeholder="Name"
+                  placeholder="Nome"
                 />
               </div>
               <div class="col-md-6">
-                <label for="sobreN"></label>
+                <label for="sobrenome"></label>
                 <input
-                  type="sobreN"
+                  type="sobrenome"
                   class="form-control"
-                  id="sobreN"
-                  placeholder="midle name"
+                  id="sobrenome"
+                  placeholder="Sobrenome"
                 />
               </div>
             </div>
@@ -45,14 +45,15 @@
                 type="email"
                 class="form-control"
                 id="email"
-                placeholder="E-mail address"
+                placeholder="psicoSociall@exemple.com"
               />
+              <span id="emailErro"></span>
             </div>
             <div class="form-group">
               <div class="col-md-6">
-                <label for="senha"></label>
+                <label for="password"></label>
                 <input
-                  type="senha"
+                  type="password"
                   class="form-control"
                   placeholder="Password"
                 />
@@ -61,30 +62,26 @@
               <div class="col-md-6">
                 <label for="repita"></label>
                 <input
-                  type="senha"
+                  type="password"
                   class="form-control"
                   id="repita"
                   placeholder="Password"
+                  required
                 />
               </div>
             </div>
+            <div class="form-group button">
+              <button type="submit" class="btn btn-primary">Enviar</button>
+            </div>
           </form>
-          <div class="form-group button">
-            <button type="submit" class="btn btn-primary">Send</button>
-          </div>
-
-          <div
-            id="alert"
-            class="alert alert-danger"
-            role="alert"
-            style="display: none"
-          >
-            Preencha todos os campos
-          </div>
+        </div>
+        <div id="alert" class="alert alert-danger d-none">
+          Preencha o campo<span id="campo-erro"></span>
         </div>
       </div>
     </main>
 
-    <script src="manipulandoEvent.js"></script>
+    <script src="./bootstrap/js/dist/jquery-3.6.0.js"></script>
+    <script src="./bootstrap/dist/js/jqueryForm.js"></script>
   </body>
 </html>

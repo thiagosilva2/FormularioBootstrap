@@ -1,5 +1,4 @@
 // let nome = document.querySelector('#nome')
-const sobrenome = document.querySelector('#sobrenome')
 
 const botaoEnviar = document.querySelector('.btn')
 
@@ -17,14 +16,24 @@ const botaoEnviar = document.querySelector('.btn')
 // })
 
 botaoEnviar.addEventListener('click', function (event) {
-  let formNome = document.querySelector('#formulario-login')
+  let form = document.querySelector('#formulario-login')
 
   const result = document.querySelector('#alert')
-  const nome = formNome.nome.value
+  let nome = form.nome.value
+  let nomeTrue = nome
 
-  if (nome.value == ' ' || nome.value == null) {
-    alert('preencha o campo nome')
+  if (nomeTrue == false) {
+    result.style.display = 'block'
   } else {
-    console.log(nome.value)
+    console.log('Campo nome preenchido com sucesso')
+  }
+
+  let sobrenome = form.sobrenome.value
+  sobrenome = true
+
+  if (sobrenome == false) {
+    result.style.display = 'block'
+  } else {
+    alert('campo sobrenome preenchido')
   }
 })
