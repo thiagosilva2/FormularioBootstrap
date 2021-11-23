@@ -3,13 +3,13 @@ $('#formulario-login').submit(function () {
   const erro = $('#alert')
   const campoErro = $('#campo-erro')
   const sobrenome = $('#sobrenome').val()
-  const emailErro = $('#emailErro')
+  let testForm = false
   // removendo o elemento da tela sempre que tentar submeter o formulário
   erro.addClass('d-none')
 
   if (nome == '') {
     erro.removeClass('d-none') //removendo a class do css do html
-    campoErro.html(' name')
+    campoErro.html(' nome')
     $('input#nome').trigger('focus')
 
     return false
@@ -18,18 +18,34 @@ $('#formulario-login').submit(function () {
     erro.removeClass('d-none')
     campoErro.html(' sobrenome')
     $('input#sobrenome').trigger('focus')
+
+    return false
   }
   // Validação de e-mail
 
-  if (nome.val() && sobrenome.val()) {
-    const userinput = $('#email').val()
-    const pattern =
-      /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/
+  const userinput = $('#email').val()
+  const pattern =
+    /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/
+  if (!pattern.test(userinput)) {
+    erro.removeClass('d-none')
+    campoErro.html(' e-mail')
+    $('input#email').trigger('focus')
 
-    if (!pattern.test(userinput)) {
-      alert('E-mail inválido!! Digite um e-mail correto')
-    }
+    return false
   }
+
+  const senha = $('#senha').val()
+  const senhaNov = $('#senhaNov').val()
+
+  if (senha && senhaNov == '') {
+    erro.removeClass('d-none')
+    campoErro.html(' senha')
+    $('input#senha').trigger('focus')
+
+    return false
+  }
+
+  $('#loader').removeClass('d-none')
 
   return false
 })

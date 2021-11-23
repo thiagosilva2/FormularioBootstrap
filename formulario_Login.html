@@ -6,20 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/loading.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.12.1/css/all.css"
+      crossorigin="anonymous"
+    />
+
     <title>PsicoSociall</title>
   </head>
-  <body style="background-color: light-grey">
+  <body>
     <main>
-      <div class="container">
-        <div class="border border-primary">
+      <div id="loader" class="loader d-none">
+        <div></div>
+      </div>
+      <div class="container p-3">
+        <div class="border">
           <div class="text-center">
             <img src="user.png" width="100px" alt="login" class="rounded" />
-            <p>Register</p>
+            <!-- <p>Cadastre-se</p> -->
           </div>
 
-          <form action="" class="col-lg-6 offset-lg-3" id="formulario-login">
-            <div class="form-group">
-              <div class="col-md-6">
+          <form
+            action="POST"
+            class="align-items-center p-3"
+            id="formulario-login"
+          >
+            <div class="form-group row">
+              <div class="col-6">
                 <label for="nome"></label>
                 <input
                   type="nome"
@@ -28,7 +43,7 @@
                   placeholder="Nome"
                 />
               </div>
-              <div class="col-md-6">
+              <div class="col-6">
                 <label for="sobrenome"></label>
                 <input
                   type="sobrenome"
@@ -45,33 +60,37 @@
                 type="email"
                 class="form-control"
                 id="email"
-                placeholder="psicoSociall@exemple.com"
+                placeholder="email@xample.com"
               />
               <span id="emailErro"></span>
             </div>
-            <div class="form-group">
-              <div class="col-md-6">
+            <div class="form-group d-flex flex-column">
+              <div class="p2">
                 <label for="password"></label>
                 <input
                   type="password"
                   class="form-control"
-                  placeholder="Password"
+                  placeholder="Senha"
+                  id="senha"
                 />
               </div>
+              <br />
 
-              <div class="col-md-6">
-                <label for="repita"></label>
+              <div class="d-flex flex-column-reverse">
+                <label for="senhaNov"></label>
                 <input
                   type="password"
                   class="form-control"
-                  id="repita"
-                  placeholder="Password"
-                  required
+                  id="senhaNov"
+                  placeholder="Repetir senha"
                 />
               </div>
             </div>
+
             <div class="form-group button">
-              <button type="submit" class="btn btn-primary">Enviar</button>
+              <button type="submit" class="btn btn-primary btn-lg">
+                <i class="far fa-check-circle"></i> Enviar
+              </button>
             </div>
           </form>
         </div>
