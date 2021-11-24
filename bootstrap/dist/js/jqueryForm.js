@@ -3,7 +3,7 @@ $('#formulario-login').submit(function () {
   const erro = $('#alert')
   const campoErro = $('#campo-erro')
   const sobrenome = $('#sobrenome').val()
-  let testForm = false
+
   // removendo o elemento da tela sempre que tentar submeter o formulário
   erro.addClass('d-none')
 
@@ -21,6 +21,20 @@ $('#formulario-login').submit(function () {
 
     return false
   }
+
+  const senha = $('#senha').val()
+  const confirmSenha = $('#confirme_senha').val()
+
+  if (senha == '' && confirmSenha == '') {
+    erro.removeClass('d-none')
+    campoErro.html(' senha')
+  } else if (senha != confirmSenha) {
+    erro.removeClass('d-none')
+    campoErro.html(' senhas não coincidem')
+  } else {
+    $('#loader').removeClass('d-none')
+  }
+
   // Validação de e-mail
 
   const userinput = $('#email').val()
@@ -33,19 +47,6 @@ $('#formulario-login').submit(function () {
 
     return false
   }
-
-  const senha = $('#senha').val()
-  const senhaNov = $('#senhaNov').val()
-
-  if (senha && senhaNov == '') {
-    erro.removeClass('d-none')
-    campoErro.html(' senha')
-    $('input#senha').trigger('focus')
-
-    return false
-  }
-
-  $('#loader').removeClass('d-none')
 
   return false
 })

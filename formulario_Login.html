@@ -21,6 +21,7 @@
       <div id="loader" class="loader d-none">
         <div></div>
       </div>
+
       <div class="container p-3">
         <div class="border">
           <div class="text-center">
@@ -29,7 +30,7 @@
           </div>
 
           <form
-            action="POST"
+            method="POST"
             class="align-items-center p-3"
             id="formulario-login"
           >
@@ -60,7 +61,7 @@
                 type="email"
                 class="form-control"
                 id="email"
-                placeholder="email@xample.com"
+                placeholder="Email@example.com"
               />
               <span id="emailErro"></span>
             </div>
@@ -70,6 +71,7 @@
                 <input
                   type="password"
                   class="form-control"
+                  name="senha"
                   placeholder="Senha"
                   id="senha"
                 />
@@ -81,7 +83,8 @@
                 <input
                   type="password"
                   class="form-control"
-                  id="senhaNov"
+                  name="confirme_senha"
+                  id="confirme_senha"
                   placeholder="Repetir senha"
                 />
               </div>
