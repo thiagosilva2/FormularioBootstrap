@@ -1,5 +1,7 @@
 
-
+body {
+  background-color: rgb(30,144,255);
+}
 p {
   color: black;
 }
@@ -9,9 +11,14 @@ main {
   ;
 }
 
+
+ /*#formulario-login {
+  background-color: bisque;
+} */
 .container {
   max-width: 60%;
   margin: 0 auto;
+
 }
 
 .rounded {
